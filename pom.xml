@@ -8,37 +8,6 @@
     <name>Spring-Mybatis-Mapper-PageHelper</name>
     <description>这是一个集成了Mybatis分页插件和通用Mapper的示例项目</description>
     <url>http://maven.apache.org</url>
-  <!-- #################################配置Maven仓库开始######################################################################### -->
-	<repositories>
-		<repository>
-			<id>nexus</id>
-			<name>Team Nexus Repository</name>
-			<url>http://http://localhost:8081/nexus/content/groups/public</url>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>nexus</id>
-			<name>Team Nexus Repository</name>
-			<url>http://http://localhost:8081/nexus/content/groups/public</url>
-		</pluginRepository>
-	</pluginRepositories>
-
-	<!-- 发布仓库 -->
-	<distributionManagement>
-		<!-- 发布release仓库 -->
-		<repository>
-			<id>releases</id>
-			<name>releases</name>
-			<url>http://http://localhost:8081/nexus/content/repositories/releases/</url>
-		</repository>
-		<!-- 发布快照版本 -->
-		<snapshotRepository>
-			<id>Snapshots</id>
-			<name>Snapshots</name>
-			<url>http://http://localhost:8081/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -51,7 +20,7 @@
         <targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
         <targetXMLPackage>mapper</targetXMLPackage>
         <!--  编译jdk版本  -->
-        <jdk.version>1.7</jdk.version>
+        <jdk.version>1.8</jdk.version>
         <!--  依赖版本  -->
         <mybatis.version>3.3.1</mybatis.version>
         <mapper.version>3.3.6</mapper.version>
@@ -114,43 +83,120 @@
         </dependency>
 
         <!--Spring-->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-oxm</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-tx</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aop</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-        </dependency>
-
+<!--         <dependency> -->
+<!--             <groupId>org.springframework</groupId> -->
+<!--             <artifactId>spring-context</artifactId> -->
+<!--         </dependency> -->
+<!--         <dependency> -->
+<!--             <groupId>org.springframework</groupId> -->
+<!--             <artifactId>spring-orm</artifactId> -->
+<!--         </dependency> -->
+<!--         <dependency> -->
+<!--             <groupId>org.springframework</groupId> -->
+<!--             <artifactId>spring-oxm</artifactId> -->
+<!--         </dependency> -->
+<!--         <dependency> -->
+<!--             <groupId>org.springframework</groupId> -->
+<!--             <artifactId>spring-jdbc</artifactId> -->
+<!--         </dependency> -->
+<!--         <dependency> -->
+<!--             <groupId>org.springframework</groupId> -->
+<!--             <artifactId>spring-tx</artifactId> -->
+<!--         </dependency> -->
+<!--         <dependency> -->
+<!--             <groupId>org.springframework</groupId> -->
+<!--             <artifactId>spring-web</artifactId> -->
+<!--         </dependency> -->
+<!--         <dependency> -->
+<!--             <groupId>org.springframework</groupId> -->
+<!--             <artifactId>spring-webmvc</artifactId> -->
+<!--         </dependency> -->
+<!--         <dependency> -->
+<!--             <groupId>org.springframework</groupId> -->
+<!--             <artifactId>spring-aop</artifactId> -->
+<!--         </dependency> -->
+<!--         <dependency> -->
+<!--             <groupId>org.springframework</groupId> -->
+<!--             <artifactId>spring-test</artifactId> -->
+<!--         </dependency> -->
+<!-- added -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-instrument</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-messaging</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc-portlet</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<scope>test</scope>
+		</dependency>
         <!--spring-oxm依赖-->
         <dependency>
             <groupId>org.codehaus.castor</groupId>
@@ -238,6 +284,41 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>local private nexus</name>
+            <url>http://maven.oschina.net/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-releases</id>
+            <name>Sonatype Nexus Releases</name>
+            <url>http://oss.sonatype.org/content/repositories/releases</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
     <build>
         <resources>
             <resource>
