@@ -29,4 +29,6 @@ import com.isea533.mybatis.util.MyMapper;
 
 public interface CountryMapper extends MyMapper<Country> {
 
+	int insertByXML(Country country);
+	int insertByXML2(Country country);
 }

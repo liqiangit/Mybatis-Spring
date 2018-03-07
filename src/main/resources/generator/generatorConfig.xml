@@ -38,7 +38,12 @@
     <plugin type="${mapper.plugin}">
       <property name="mappers" value="${mapper.Mapper}"/>
     </plugin>
-
+	<!-- 主要用于类的实体序列化 -->
+<!-- 	<plugin type="org.mybatis.generator.plugins.SerializablePlugin" /> -->
+	<!-- 用来给Java模型生成equals和hashcode方法 -->
+<!-- 	<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" /> -->
+	<!-- 实现toString的方法 -->
+<!-- 	<plugin type="org.mybatis.generator.plugins.ToStringPlugin" /> -->
     <jdbcConnection driverClass="${jdbc.driverClass}"
                     connectionURL="${jdbc.url}"
                     userId="${jdbc.user}"
@@ -51,8 +56,9 @@
 
     <javaClientGenerator targetPackage="${targetMapperPackage}" targetProject="${targetJavaProject}" type="XMLMAPPER" />
 
-    <table tableName="%" >
-      <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
-    </table>
+<!--     <table tableName="%" > -->
+<!--       <generatedKey column="id" sqlStatement="Mysql" identity="true"/> -->
+<!--     </table> -->
+		<table tableName="CW_GE_USER_PICTURE" domainObjectName="UserPicture" alias="USR"/>
   </context>
 </generatorConfiguration>

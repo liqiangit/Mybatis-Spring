@@ -1,3 +1,8 @@
+mvn clean install -Dmaven.test.skip=true -Pproduct
+mvn clean package -Dmaven.test.skip=true -Pproduct
+
+mvn mybatis-generator:generate
+
 访问地址
 http://localhost:8080/mybatis-spring/
 从
@@ -5,6 +10,39 @@ https://github.com/abel533/Mybatis-Spring
 原项目报错
 ERROR [localhost-startStop-1] - Context initialization failed
 java.lang.NoSuchMethodError: org.springframework.beans.factory.annotation.InjectionMetadata.needsRefresh(Lorg/springframework/beans/factory/annotation/InjectionMetadata;Ljava/lang/Class;)Z
+
+解决oracle数据库下
+//	delete from country where id=311;
+//	select * from country where id=311;
+//	Caused by: org.apache.ibatis.type.TypeException: Error setting null for parameter #2 with JdbcType OTHER . Try setting a different JdbcType for this parameter or a different jdbcTypeForNull configuration property. Cause: java.sql.SQLException: 无效的列类型: 1111
+	@Test
+	public void testInsert() {
+		Country country=new Country();
+		country.setId(311);
+		country.setCountrycode("test");
+//		country.setCountryname("test");
+        Assert.assertEquals(1,countryMapper.insert(country));
+	}
+
+添加数据库驱动
+		<!-- 数据库驱动 -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0.3</version>
+		</dependency>
+		<!-- db2数据库驱动 -->
+		<dependency>
+			<groupId>com.ibm.db2.jcc</groupId>
+			<artifactId>db2jcc4</artifactId>
+			<version>10.1</version>
+		</dependency>   
+        <!--mysql-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
 添加了一些spring 的依赖
 
 

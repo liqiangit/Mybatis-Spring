@@ -27,7 +27,7 @@ package com.isea533.mybatis.model;
 import javax.persistence.*;
 import java.util.Date;
 
-@Table(name = "`user login info`")
+@Table(name = "user_login_info")
 public class UserLoginInfo {
     @Id
     @Column(name = "Id")
