@@ -41,7 +41,7 @@ STRUCT              Struct
 REF                 Ref  
 DATALINK            java.net.URL[color=red][/color]
  */
-public class TypeUtils {
+public class TypeUtils { 
 	public static Map<Class<?>, JdbcType> types = new HashMap<Class<?>, JdbcType>();
     static{
     	types.put(String.class, JdbcType.VARCHAR);
