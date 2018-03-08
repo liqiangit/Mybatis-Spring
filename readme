@@ -23,6 +23,9 @@ java.lang.NoSuchMethodError: org.springframework.beans.factory.annotation.Inject
 //		country.setCountryname("test");
         Assert.assertEquals(1,countryMapper.insert(country));
 	}
+EntityColumn
+TypeUtils
+BaseInsertProvider
 
 添加数据库驱动
 		<!-- 数据库驱动 -->
